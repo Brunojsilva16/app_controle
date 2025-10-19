@@ -1,0 +1,19 @@
+{
+    "name": "bruno/app_token",
+    "description": "Sistema de Controle de Tokens.",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+        "authors": [
+        {
+            "name": "bjssuporte",
+            "email": "brunojsilvasuporte@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6",
+        "phpmailer/phpmailer": "^6.10"
+    }
+}
