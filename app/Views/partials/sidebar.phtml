@@ -1,0 +1,29 @@
+<div class="border-end" id="sidebar-wrapper">
+    <div class="user-profile">
+        <div class="profile-icon">
+            <i class="fas fa-user-circle"></i>
+        </div>
+        <h5><?= htmlspecialchars(\App\Core\Auth::userName() ?? 'Usuário') ?></h5>
+        <a href="<?= $_ENV['BASE_URL'] ?>/logout" class="btn btn-sm btn-outline-light">Encerrar</a>
+    </div>
+    <div class="list-group list-group-flush">
+        <a href="<?= $_ENV['BASE_URL'] ?>/home" class="list-group-item list-group-item-action p-3">
+            <i class="fas fa-home fa-fw me-2"></i>Início
+        </a>
+        <a href="<?= $_ENV['BASE_URL'] ?>/token/gerar" class="list-group-item list-group-item-action p-3">
+            <i class="fas fa-play-circle fa-fw me-2"></i>Gerar Token
+        </a>
+        <a href="<?= $_ENV['BASE_URL'] ?>/token/consulta" class="list-group-item list-group-item-action p-3">
+            <i class="fas fa-database fa-fw me-2"></i>Consulta
+        </a>
+        <a href="<?= $_ENV['BASE_URL'] ?>/relatorios" class="list-group-item list-group-item-action p-3">
+            <i class="fas fa-chart-line fa-fw me-2"></i>Relatórios
+        </a>
+        <a href="#" class="list-group-item list-group-item-action p-3 disabled" tabindex="-1" aria-disabled="true">
+            <i class="fas fa-user-tie fa-fw me-2"></i>Profissionais
+        </a>
+        <a href="#" class="list-group-item list-group-item-action p-3 disabled" tabindex="-1" aria-disabled="true">
+            <i class="fas fa-user-shield fa-fw me-2"></i>Administradores
+        </a>
+    </div>
+</div>

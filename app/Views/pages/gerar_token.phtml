@@ -1,0 +1,69 @@
+<h1 class="mb-4">Gerar Lançamento de Pagamento</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form action="<?= $_ENV['BASE_URL'] ?>/token/gerar" method="POST">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="paciente" class="form-label">Nome do Paciente <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="paciente" name="paciente" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="id_paciente" class="form-label">CPF ou Código do Paciente</label>
+                    <input type="text" class="form-control" id="id_paciente" name="id_paciente">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="profissional_id" class="form-label">Profissional <span class="text-danger">*</span></label>
+                    <select class="form-select" id="profissional_id" name="profissional_id" required>
+                        <option value="" selected disabled>Selecione um profissional</option>
+                        <?php foreach ($profissionais as $prof): ?>
+                            <option value="<?= htmlspecialchars($prof['id_prof']) ?>"><?= htmlspecialchars($prof['profissional']) ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="valorpag" class="form-label">Valor (R$) <span class="text-danger">*</span></label>
+                    <input type="number" step="0.01" class="form-control" id="valorpag" name="valorpag" required placeholder="Ex: 150.00">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="tipopag" class="form-label">Tipo de Pagamento</label>
+                    <select class="form-select" id="tipopag" name="tipopag">
+                        <option value="">Selecione</option>
+                        <?php foreach ($tiposPagamento as $tipo): ?>
+                            <option value="<?= htmlspecialchars($tipo['valor_li']) ?>"><?= htmlspecialchars($tipo['nome_li']) ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="mes_ref" class="form-label">Mês de Referência</label>
+                    <select class="form-select" id="mes_ref" name="mes_ref">
+                        <option value="">Selecione</option>
+                        <?php foreach ($meses as $mes): ?>
+                            <option value="<?= htmlspecialchars($mes['valor_li']) ?>"><?= htmlspecialchars($mes['nome_li']) ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="ano_ref" class="form-label">Ano de Referência</label>
+                    <select class="form-select" id="ano_ref" name="ano_ref">
+                        <option value="">Selecione</option>
+                         <?php foreach ($anos as $ano): ?>
+                            <option value="<?= htmlspecialchars($ano['valor_li']) ?>"><?= htmlspecialchars($ano['nome_li']) ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-check me-2"></i>Salvar Lançamento
+            </button>
+        </form>
+    </div>
+</div>
+

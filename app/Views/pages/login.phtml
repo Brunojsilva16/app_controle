@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row justify-content-center align-items-center" style="height:100vh;">
+        <div class="col-md-5 col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="card-title text-center mb-4">Acessar Sistema</h3>
+                    
+                    <!-- Adicionando a partial de mensagens aqui também -->
+                    <?php require_once VIEWS_PATH . '/partials/messages.phtml'; ?>
+
+                    <form action="<?= $_ENV['BASE_URL'] ?>/login" method="POST">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="senha" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="senha" name="senha" required>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Entrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
